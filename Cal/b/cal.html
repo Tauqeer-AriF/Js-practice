@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+        <div class="row">
+            <div class="column" id="screen-column">
+               <form action="/action_page.php">
+                   <input type="text" name="screen" >
+          
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="column">
+               <input type="button" value="1" onclick="screen.value +='1'">
+            </div>
+            <div class="column">
+               <input type="button" value="2" onclick="screen.value +='2'">
+            </div>
+            <div class="column">
+               <input type="button" value="3" onclick="screen.value +='3'">
+            </div>
+            <div class="column" >
+               <input type="button"value="+" onclick="screen.value +='+'">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+               <input type="button" value="4" onclick="screen.value +='4'">
+            </div>
+            <div class="column">
+               <input type="button" value="5" onclick="screen.value +='5'">
+            </div>
+            <div class="column">
+               <input type="button" value="6" onclick="screen.value +='6'"> 
+            </div>
+            <div class="column" >
+               <input type="button" value="-" onclick="screen.value +='-'">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+               <input type="button" value="7" onclick="screen.value +='7'">
+            </div>
+            <div class="column">
+               <input type="button" value="8" onclick="screen.value +='8'">
+            </div>
+            <div class="column">
+               <input type="button" value="9" onclick="screen.value +='9'">
+            </div>
+            <div class="column" >
+               <input type="button" value="X" onclick="screen.value +='*'">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <input type="button" value="C" onclick="screen.value =''">
+            </div>
+            <div class="column">
+                <input type="button" value="0" onclick="screen.value +='0'" >
+            </div>
+            <div class="column"> 
+                <input type="button" value="%" onclick="screen.value +='%'">
+            </div>
+            <div class="column" >
+                <input type="button" value="/" onclick="screen.value +='/'">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column" id="screen-column"> 
+                <input type="button" id="equal" value="=" onclick="screen.value = eval(screen.value)" >
+            </div>
+            
+        </div>
+    </form>	
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

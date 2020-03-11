@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style type="text/css">
+   
+.main{
+  width: 40%;
+  height: auto;
+  margin: auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #000;
+  margin-top: 50px;
+  padding: 20px;
+
+}
+#all-btn{
+  background-color: #ffffff;
+  border: none;
+  float: right;
+}
+#all-btn i{
+  font-size: 20px;
+}
+.cat{
+  padding-left: 10px;
+}
+
+.tab {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 13px;
+  color: blue;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #f1f1f1;
+  margin-bottom: 20px;
+}
+#child{
+  margin-left: 20px;
+}
+#Sub-child{
+  margin-left: 40px;
+}
+.checkbox{ 
+            width: 20px; 
+            height: 20px; 
+        } 
+.add-category{
+  color: blue;
+  background-color: white;
+  border: none;
+}        
+#add{
+  margin-top: 50px;
+  display: none;
+}
+#add select{
+  width: 38%;
+  height: 30px;
+  margin-top: 20px;
+}
+.text{
+  width: 37%;
+  height: 25px;
+}
+ </style>   
+</head>
+<body>
+
+  <div class="main">
+    <span class="cat">Categories<button onclick="showHideDiv('full-content')" id="all-btn"><i class="fa fa-caret-up"></i></button></span>
+    <div id="full-content">
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'all-cat')">All Categories</button>
+        <button class="tablinks" onclick="openCity(event, 'most-used')">Most Used</button>
+      </div>
+
+      <div id="all-cat" class="tabcontent" style="display: block;">
+        <form action="/action_page.php">
+          <input type="checkbox" class="checkbox" name="vehicle" value="Bike"> test<br>
+          <input type="checkbox" class="checkbox" name="vehicle" id="child" value="Car" checked> child test<br>
+          <input type="checkbox" class="checkbox" name="vehicle" id="Sub-child" value="Car" checked> child test<br>
+        </form>
+        <form action="/action_page.php">
+          <input type="checkbox" class="checkbox" name="vehicle" value="Bike"> test<br>
+        </form>
+      </div>
+
+      <div id="most-used" class="tabcontent">
+        <form action="/action_page.php">
+          <input type="checkbox" class="checkbox" name="vehicle" value="Bike">Uncatagories<br>
+        </form>
+      </div>
+
+
+      <button onclick="showHideDiv('add')" class="add-category">+ Add new category</button>
+
+        <div id="add">
+          <form action="/action_page.php">
+            <input type="text" class="text" value=""><br>
+              <select>
+                <option value="#">--Parent Category--</option>
+                <option value="#">test</option>
+                <option value="#">child test</option>
+                <option value="#">sub-child</option>
+              </select>
+          </form>
+        </div>
+    </div>  
+  </div>
+
+
+
+
+         <script>
+               function openCity(evt, cityName) {
+                 var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                 for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                    }
+                     tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                       tablinks[i].className = tablinks[i].className.replace(" active", "");
+                     }
+                       document.getElementById(cityName).style.display = "block";
+                      evt.currentTarget.className += " active";
+                         }
+        </script>
+
+         <script type="text/javascript">
+               function showHideDiv(ele) {
+                 var srcElement = document.getElementById(ele);
+                    if (srcElement.style.display == "block") {
+                        srcElement.style.display = 'none';
+                    }
+                      else {
+                        srcElement.style.display = 'block';
+                       }
+                      return false;
+                 }
+            </script>
+
+
+
+
+</body>
+</html>
